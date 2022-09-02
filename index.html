@@ -5,9 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel = "stylesheet" href="mystyles.css">
 </head>
 <body>
-    <button onclick="getComputerChoice()"> Generate a choice</button>
+    <form id = "form">
+        <label>Choose either <span class = 'options'>Paper</span>, <span class = 'options'>Scissors</span> or <span class = 'options'>Rock</span></label>
+        <br>
+        <input type="text" id = 'userInput' placeholder="rock" required>
+        <input type="submit">
+    </form>
+
     <script src = 'app.js'></script>
 </body>
 </html>
