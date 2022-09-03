@@ -13,13 +13,16 @@ function getComputerChoice(){
 let playerScore = 0;
 let computerScore = 0;
 
-function startRound(playerSel, computerSel){
-    let playSel = playerSel.toLowerCase();
-    let compSel = computerSel.toLowerCase();
+function startRound(userIn, getComp){
+    let playSel = userIn.toLowerCase();
+    let compSel = getComp.toLowerCase();
     let playerScore = 0;
     let computerScore = 0;
 
-    if (playerSel == compSel){
+    console.log(playSel);
+    console.log(compSel);
+
+    if (playSel == compSel){
         document.getElementById('maintext').innerHTML = "It's a tie!";
         return
     }
@@ -31,14 +34,10 @@ function startRound(playerSel, computerSel){
                     computerScore += 1;
                     document.getElementById('maintext').innerHTML = "You Lose! Paper beats Rock";
                     return;
-                    
-                    
                 case "scissors":
                     playerScore += 1;
                     document.getElementById('maintext').innerHTML = "You win! Rock beats Scissors";
                     return;
-                    
-                    
             }
         case "paper":
             switch(compSel){
@@ -46,7 +45,6 @@ function startRound(playerSel, computerSel){
                     computerScore += 1;
                     document.getElementById('maintext').innerHTML = "You lose! Scissors beats Paper";
                     return;
-                    
                 case "rock":
                     playerScore += 1;
                     document.getElementById('maintext').innerHTML = "You win! Paper beats Rock";
@@ -58,12 +56,10 @@ function startRound(playerSel, computerSel){
                     computerScore += 1;
                     document.getElementById('maintext').innerHTML = "You lose! Rock beats Scissors";
                     return;
-                    
                 case "paper":
                     playerScore += 1;
                     document.getElementById('maintext').innerHTML = "You win! Scissors beats Paper";
                     return;
-                    
             }
     }
 }
@@ -80,9 +76,6 @@ const form = document.getElementById('form')
 form.addEventListener('submit', (e) => {
     const userInput= document.getElementById('userInput').value;
     const result = startRound(userInput, getComputerChoice()); 
-    console.log(userInput);
-    console.log(getComputerChoice());
-    
     e.preventDefault();
 })
 
